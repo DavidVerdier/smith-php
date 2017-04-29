@@ -10,13 +10,13 @@ $btn = new Button('#',new Icon('upload'), 'Upload');
 $btn->addStyle('big floating');
 $bar->addComponent($btn);
 $btn = new Button('#',new Icon('file-o'), null);
-$btn->addStyle('floating');
+$btn->addStyle('big floating');
 $bar->addComponent($btn);
 $btn = new Button('#',new Icon('facebook'), 'Facebook');
-$btn->addStyle('floating');
+$btn->addStyle('big floating');
 $bar->addComponent($btn);
 $btn = new Button('#',null, 'Twitter');
-$btn->addStyle('');
+$btn->addStyle('big floating');
 $bar->addComponent($btn);
 
 //$bar->addStyle('fill');

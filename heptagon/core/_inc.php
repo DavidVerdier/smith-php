@@ -22,7 +22,7 @@ spl_autoload_register(function ($class_name) {
 define('CORE_LESS','core/assets/less');
 define('CORE_CSS','core/assets/css');
 define('CORE_JS','core/assets/js');
-define('CORE_ASSEETS','core/assets');
+define('CORE_ASSETS','core/assets');
 define('CUSTOM','custom');
 define('VIEWS','views');
 ?>

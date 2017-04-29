@@ -1,0 +1,43 @@
+@import '../font-awesome/css/font-awesome';
+@import 'material_design_colors_full';
+
+@import 'BorderLayout';
+@import 'FullHeightContainer';
+@import 'SplitLayout';
+@import 'FlowLayout';
+@import 'Container';
+@import 'Button';
+
+@import 'themes/Paper';
+
+@defaultFont : sans-serif;
+
+html {
+    font-family:@defaultFont;
+}
+
+body {
+    margin:0;
+    display: flex;
+
+    * {
+        position:relative;
+    }
+
+    &.debug {
+        div {
+            outline: 1px solid @pink;
+        }
+
+        &.all {
+            *:not(div) {
+                outline: 1px solid @green;
+            }
+        }
+    }
+}
+
+.transition(@duration: 0.25s) {
+    transition:@duration all;
+    transition-timing-function:cubic-bezier(0.3,1.0,0.3,1.0);
+}

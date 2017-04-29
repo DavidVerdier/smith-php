@@ -1,0 +1,24 @@
+.FlowLayout {
+    flex:1;
+    display:flex;
+    flex-wrap:wrap;
+
+    &.vertical {
+        flex-direction:column;
+    }
+
+    &.horizontal {
+        flex-direction:row;
+    }
+
+    > .FlowLayoutArea {
+        display:flex;
+        align-items:center;
+    }
+
+    &.fill {
+        > .FlowLayoutArea {
+            flex:auto;
+        }
+    }
+}

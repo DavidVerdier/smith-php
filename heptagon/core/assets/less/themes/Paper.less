@@ -1,0 +1,122 @@
+.Paper {
+    .elevation(@elevation:1) {
+        box-shadow:
+            0 unit(@elevation*4,px) unit(@elevation*12,px) rgba(0,0,0,sqrt(@elevation)/7.5),
+            0 unit(@elevation*3,px) unit(@elevation*4,px) rgba(0,0,0,sqrt(@elevation)/10.5);
+        //z-index:@elevation;
+    }
+
+    .line(@color:transparent,@open:1) {
+        &::before {
+            content:' ';
+            position:absolute;
+            width:100%;
+            height:2px;
+            background-color:@color;
+            border-bottom-left-radius: inherit;
+            border-bottom-right-radius: inherit;
+            bottom:0;//unit(50-@open*50,'%');
+            left:0;//unit(50-@open*50,'%');
+            transform:scale(@open,1);
+            .transition(0.5s);
+        }
+    }
+
+    .overlay(@color:transparent,@open:0) {
+        &::before {
+            content:' ';
+            position:absolute;
+            width:100%;
+            height:100%;
+            background-color:@color;
+            border-radius: inherit;
+            top:0;//unit(50-@open*50,'%');
+            left:0;//unit(50-@open*50,'%');
+            transform:scale(@open,@open);
+            .transition(0.2s);
+        }
+    }
+
+    .spotlight(@color:transparent) {
+        box-shadow:0 0 100px @color inset;
+    }
+
+    background-color: @grey-700;
+
+    .Button {
+        border-radius:2px;
+        margin:5px;
+        color:@grey-300;
+        text-decoration:none;
+        background-color:@grey-600;
+        .transition(0.2s);
+
+        > .ButtonIcon {
+            padding:10px;
+        }
+
+        > .ButtonLabel {
+            padding:10px;
+        }
+
+        &.vertical > .ButtonIcon + .ButtonLabel {
+            padding-top:0px;
+        }
+
+        &.horizontal > .ButtonIcon + .ButtonLabel {
+            padding-left:0px;
+        }
+
+        &.big {
+            > .ButtonIcon {
+                padding:20px;
+            }
+
+            > .ButtonLabel {
+                padding:20px;
+            }
+
+            &.vertical > .ButtonIcon + .ButtonLabel {
+                padding-top:0px;
+            }
+
+            &.horizontal > .ButtonIcon + .ButtonLabel {
+                padding-left:0px;
+            }
+        }
+
+        &.floating {
+            .elevation(0.5);
+
+            &:hover {
+                .elevation(3);
+            }
+        }
+
+        .line(transparent,0);
+
+            &:hover {
+                .line(transparent,0);
+            }
+
+            &:active {
+                .line(@red,1);
+            }
+
+        &:not(.floating) {
+            .overlay(transparent,1);
+
+            &:hover {
+                .overlay(@black-100,1);
+            }
+
+            &:active {
+                .overlay(transparent,0);
+            }
+        }
+    }
+}
+
+body {
+    .overlay(@black-300,1);
+}

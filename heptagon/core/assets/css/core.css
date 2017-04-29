@@ -1,0 +1,217 @@
+@import '../font-awesome/css/font-awesome';
+.BorderLayout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.BorderLayout > .BorderLayoutNorth {
+  display: flex;
+}
+.BorderLayout > .BorderLayoutWrap {
+  flex: 1;
+  display: flex;
+}
+.BorderLayout > .BorderLayoutWrap > .BorderLayoutWest {
+  display: flex;
+}
+.BorderLayout > .BorderLayoutWrap > .BorderLayoutCenter {
+  flex: 1;
+  display: flex;
+}
+.BorderLayout > .BorderLayoutWrap > .BorderLayoutEast {
+  display: flex;
+}
+.BorderLayout > .BorderLayoutSouth {
+  display: flex;
+}
+.FullHeightContainer {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+}
+.SplitLayout {
+  flex: 1;
+  display: flex;
+}
+.SplitLayout.vertical {
+  flex-direction: column;
+}
+.SplitLayout.horizontal {
+  flex-direction: row;
+}
+.SplitLayout > .SplitLayoutArea {
+  flex: 1;
+  display: flex;
+}
+.FlowLayout {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+.FlowLayout.vertical {
+  flex-direction: column;
+}
+.FlowLayout.horizontal {
+  flex-direction: row;
+}
+.FlowLayout > .FlowLayoutArea {
+  display: flex;
+  align-items: center;
+}
+.FlowLayout.fill > .FlowLayoutArea {
+  flex: auto;
+}
+.Container {
+  flex: 1;
+  display: flex;
+}
+.Button {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+.Button.vertical {
+  flex-direction: column;
+}
+.Button.horizontal {
+  flex-direction: row;
+}
+.Paper {
+  background-color: #616161;
+}
+.Paper .Button {
+  border-radius: 2px;
+  margin: 5px;
+  color: #e0e0e0;
+  text-decoration: none;
+  background-color: #757575;
+  transition: 0.2s all;
+  transition-timing-function: cubic-bezier(0.3,1.0,0.3,1.0);
+}
+.Paper .Button > .ButtonIcon {
+  padding: 10px;
+}
+.Paper .Button > .ButtonLabel {
+  padding: 10px;
+}
+.Paper .Button.vertical > .ButtonIcon + .ButtonLabel {
+  padding-top: 0px;
+}
+.Paper .Button.horizontal > .ButtonIcon + .ButtonLabel {
+  padding-left: 0px;
+}
+.Paper .Button.big > .ButtonIcon {
+  padding: 20px;
+}
+.Paper .Button.big > .ButtonLabel {
+  padding: 20px;
+}
+.Paper .Button.big.vertical > .ButtonIcon + .ButtonLabel {
+  padding-top: 0px;
+}
+.Paper .Button.big.horizontal > .ButtonIcon + .ButtonLabel {
+  padding-left: 0px;
+}
+.Paper .Button.floating {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.094280904158206), 0 1.5px 2px rgba(0,0,0,0.067343502970147);
+}
+.Paper .Button.floating:hover {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.23094010767585), 0 9px 12px rgba(0,0,0,0.16495721976846);
+}
+.Paper .Button::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  bottom: 0;
+  left: 0;
+  transform: scale(0,1);
+  transition: 0.5s all;
+  transition-timing-function: cubic-bezier(0.3,1.0,0.3,1.0);
+}
+.Paper .Button:hover::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  bottom: 0;
+  left: 0;
+  transform: scale(0,1);
+  transition: 0.5s all;
+  transition-timing-function: cubic-bezier(0.3,1.0,0.3,1.0);
+}
+.Paper .Button:active::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #f44336;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  bottom: 0;
+  left: 0;
+  transform: scale(1,1);
+  transition: 0.5s all;
+  transition-timing-function: cubic-bezier(0.3,1.0,0.3,1.0);
+}
+.Paper .Button:not(.floating)::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  transform: scale(1,1);
+  transition: 0.2s all;
+  transition-timing-function: cubic-bezier(0.3,1.0,0.3,1.0);
+}
+.Paper .Button:not(.floating):hover::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  transform: scale(1,1);
+  transition: 0.2s all;
+  transition-timing-function: cubic-bezier(0.3,1.0,0.3,1.0);
+}
+.Paper .Button:not(.floating):active::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  transform: scale(0,0);
+  transition: 0.2s all;
+  transition-timing-function: cubic-bezier(0.3,1.0,0.3,1.0);
+}
+html {
+  font-family: sans-serif;
+}
+body {
+  margin: 0;
+  display: flex;
+}
+body * {
+  position: relative;
+}
+body.debug div {
+  outline: 1px solid #e91e63;
+}
+body.debug.all *:not(div) {
+  outline: 1px solid #4caf50;
+}

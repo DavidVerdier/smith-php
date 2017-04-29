@@ -1,0 +1,17 @@
+.SplitLayout {
+    flex:1;
+    display:flex;
+
+    &.vertical {
+        flex-direction:column;
+    }
+
+    &.horizontal {
+        flex-direction:row;
+    }
+
+    > .SplitLayoutArea {
+        flex:1;
+        display:flex;
+    }
+}

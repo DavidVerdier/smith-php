@@ -51,12 +51,9 @@
             position:absolute;
             width:100%;
             height:100%;
-            //padding:50%;
             top:0;
             left:0;
             pointer-events:none;
-            //background-color: transparent;
-            //border-radius: 1000px;
             background-image:radial-gradient(circle,@color 20%,transparent 21%);
             background-repeat:no-repeat;
             background-position:50%;
@@ -79,6 +76,10 @@
     background-color: @grey-50;
 
     .Button {
+        &::-moz-focus-inner {
+            border: 0;
+        }
+        
         font-family: @defaultFont;
         font-size:@defaultFontSize;
         border:0;
@@ -92,7 +93,7 @@
         background-color:@grey-50;
         .transition(0.2s);
         .ripple(@black-200);
-        //.rippleConstraint;
+        .rippleConstraint;
 
         > .ButtonIcon {
             padding:10px;

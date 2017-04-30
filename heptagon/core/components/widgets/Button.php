@@ -23,7 +23,7 @@ class Button extends Component {
     }
 
     public function run(App $app) {
-        $container = new Anchor($this->action, '');
+        $container = new ButtonInput($this->action, '');
         $container->addStyle('Button '.$this->direction);
         $container->addStyle($this->styles);
 

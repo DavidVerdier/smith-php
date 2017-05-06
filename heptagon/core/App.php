@@ -14,7 +14,7 @@ class App extends Component
             $lessc->compileFile(CORE_LESS."/core.less",CORE_CSS."/core.css");
         }
         $this->document = new Document();
-        $this->document->addLink(new Link('stylesheet','text/css','/'.CORE_CSS.'/core.css'));
+        $this->document->addLink(new Link('stylesheet','/'.CORE_CSS.'/core.css','text/css'));
     }
 
     public function run(App $app) {

@@ -12,12 +12,12 @@ class FlowLayout extends Component {
     }
 
     public function run(App $app) {
-        $container = new Div();
-        $container->addStyle('FlowLayout '.$this->direction);
-        $container->addStyle($this->styles);
+        $container = new HtmlNode('div');
+        $container->addClass('FlowLayout '.$this->direction);
+        $container->addClass($this->styles);
         foreach ($this->children as $c) {
-            $area = new Div();
-            $area->addStyle('FlowLayoutArea');
+            $area = new HtmlNode('div');
+            $area->addClass('FlowLayoutArea');
             $container->addChild($area);
             $area->addChild($c->run($app));
         }

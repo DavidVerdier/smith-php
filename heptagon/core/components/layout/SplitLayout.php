@@ -18,12 +18,12 @@ class SplitLayout extends Component {
     }
 
     public function run(App $app) {
-        $container = new Div();
-        $container->addStyle('SplitLayout '.$this->direction);
-        $container->addStyle($this->styles);
+        $container = new HtmlNode('div');
+        $container->addClass('SplitLayout '.$this->direction);
+        $container->addClass($this->styles);
         for ($i=0 ; $i<$this->areas ; $i++) {
-            $area = new Div();
-            $area->addStyle('SplitLayoutArea');
+            $area = new HtmlNode('div');
+            $area->addClass('SplitLayoutArea');
             $container->addChild($area);
             if ($i<count($this->children)) {
                 $area->addChild($this->children[$i]->run($app));

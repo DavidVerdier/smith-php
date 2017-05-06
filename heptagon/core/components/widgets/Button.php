@@ -23,18 +23,19 @@ class Button extends Component {
     }
 
     public function run(App $app) {
-        $container = new ButtonInput($this->action, '');
-        $container->addStyle('Button '.$this->direction);
-        $container->addStyle($this->styles);
+        $container = new HtmlNode('div', array('' => $this->action));
+        $container->addClass('Button '.$this->direction);
+        $container->addClass($this->styles);
 
         if ($this->icon) {
-            $this->icon->addStyle('ButtonIcon');
+            $this->icon->addClass('ButtonIcon');
             $container->addChild($this->icon);
         }
         
         if ($this->label) {
-            $label = new Span($this->label);
-            $label->addStyle('ButtonLabel');
+            $label = new HtmlNode('span');
+            $label->addClass('ButtonLabel')
+                  ->addChild(new TextNode($this->label));
             $container->addChild($label);
         }
         return $container;

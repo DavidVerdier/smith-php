@@ -26,7 +26,7 @@ $container->addComponent($layout);
 
 $app->addComponent($container);
 $app->getDocument()->addBaseTheme('Paper');
-$app->getDocument()->addHead(new Raw('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">'));
+$app->getDocument()->addHead(new TextNode('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">'));
 $app->getDocument()->addScript(CORE_JS.'/hammer-time');
 $app->getDocument()->addLink(new Link('manifest','',CORE_ASSETS.'/manifest.json'));
 //$app->debugLayout(true,true);

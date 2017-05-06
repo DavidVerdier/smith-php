@@ -11,12 +11,12 @@ class Document
     private $body;
 
     public function __construct() {
-        $this->html = new Html();
-        $this->head = new Head();
-        $this->body = new Body();
+        $this->html = new HtmlNode('html');
+        $this->head = new HtmlNode('head');
+        $this->body = new HtmlNode('body');
 
         $this->html->addChild($this->head);
-        $this->html->addCHild($this->body);
+        $this->html->addChild($this->body);
     }
 
     public function render() {
@@ -29,20 +29,20 @@ class Document
     }
 
     public function addBaseTheme(string $theme) {
-        $this->body->addStyle($theme);
+        $this->body->addClass($theme);
     }
 
-    public function addHead(Element $raw = null) {
+    public function addHead(HtmlNode $raw = null) {
         if ($raw) 
             $this->head->addChild($raw);
     }
 
-    public function addContent(Element $content = null) {
+    public function addContent(HtmlNode $content = null) {
         if ($content) 
             $this->body->addChild($content);
     }
 
-    public function addLink(Link $link) {
+    public function addLink(HtmlNode $link) {
         $this->head->addChild($link);
     }
 
@@ -53,7 +53,7 @@ class Document
     private function renderScripts() {
         $scripts = '';
         foreach ($this->scripts as $script) {
-            $this->body->addChild(new Script('text/javascript', $script.'.js'));
+            $this->body->addChild(new Script($script.'.js'));
         }
     }
 }

@@ -9,35 +9,35 @@ class BorderLayout extends Component {
     }
 
     public function run(App $app) {
-        $container = new Div();
-        $container->addStyle('BorderLayout');
-        $container->addStyle($this->styles);
+        $container = new HtmlNode('div');
+        $container->addClass('BorderLayout');
+        $container->addClass($this->styles);
 
-        $north= new Div();
-        $north->addStyle('BorderLayoutNorth');
+        $north= new HtmlNode('div');
+        $north->addClass('BorderLayoutNorth');
         $north->addChild($this->children['north']->run($app));
 
-        $wrap= new Div();
-        $wrap->addStyle('BorderLayoutWrap');
+        $wrap= new HtmlNode('div');
+        $wrap->addClass('BorderLayoutWrap');
 
-        $west= new Div();
-        $west->addStyle('BorderLayoutWest');
+        $west= new HtmlNode('div');
+        $west->addClass('BorderLayoutWest');
         $west->addChild($this->children['west']->run($app));
 
-        $east= new Div();
-        $east->addStyle('BorderLayoutEast');
+        $east= new HtmlNode('div');
+        $east->addClass('BorderLayoutEast');
         $east->addChild($this->children['east']->run($app));
 
-        $center= new Div();
-        $center->addStyle('BorderLayoutCenter');
+        $center= new HtmlNode('div');
+        $center->addClass('BorderLayoutCenter');
         $center->addChild($this->children['center']->run($app));
 
         $wrap->addChild($west);
         $wrap->addChild($center);
         $wrap->addChild($east);
 
-        $south= new Div();
-        $south->addStyle('BorderLayoutSouth');
+        $south= new HtmlNode('div');
+        $south->addClass('BorderLayoutSouth');
         $south->addChild($this->children['south']->run($app));
 
         $container->addChild($north);

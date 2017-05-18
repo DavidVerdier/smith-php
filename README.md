@@ -12,6 +12,7 @@ It is currently in very early development and should not be used in this state.
 - Automatic and configurable API exposer
 - Application Events
 - Event based plugin integration
+- Component and Controller cache
 - More to come if new features appear to be necessary ...
 
 ### Basic route management

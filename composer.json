@@ -1,18 +1,14 @@
 {
-    "name": "heptagon",
-    "description": "",
-    "license": "MIT",
-    "keywords": ["php"],
+    "name": "heptagon/heptagon",
     "authors": [
         {
             "name": "Etienne Orlhac",
             "email": "etienneorlhac@gmail.com"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
-            "Heptagon\\Core": "src/core/"
+            "Heptagon\\Core": "src/core/",
         }
     }
 }

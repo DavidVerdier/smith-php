@@ -1,5 +1,5 @@
 <?php
-namespace Heptagon\core;
+namespace Heptagon\Core;
 
 class Route {
 

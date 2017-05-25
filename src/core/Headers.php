@@ -1,5 +1,5 @@
 <?php
-namespace core;
+namespace Heptagon\Core;
 
 class Headers {
     private $headers = array();

@@ -1,5 +1,5 @@
 # Heptagon
-Heptagon is a lightweight PHP7 framework. It aims at providing the most basic toolset for an application and orienting development towards good practice.
+Heptagon is a extra small PHP7 framework. It aims at providing the most basic toolset for an application and orienting development towards good practice.
 It is currently in very early development and should not be used in this state.
 
 ## Planned Features

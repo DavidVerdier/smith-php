@@ -4,35 +4,35 @@ namespace Heptagon\Core;
 class Route {
 
     public static function get(string $matcher, Controller $controller) {
-        Router::match(array('GET'),$matcher,$controller);
+        Route::match(array('GET'),$matcher,$controller);
     }
 
     public static function post(string $matcher, Controller $controller) {
-        Router::match(array('POST'),$matcher,$controller);
+        Route::match(array('POST'),$matcher,$controller);
     }
 
     public static function put(string $matcher, Controller $controller) {
-        Router::match(array('PUT'),$matcher,$controller);
+        Route::match(array('PUT'),$matcher,$controller);
     }
 
     public static function delete(string $matcher, Controller $controller) {
-        Router::match(array('DELETE'),$matcher,$controller);
+        Route::match(array('DELETE'),$matcher,$controller);
     }
 
     public static function patch(string $matcher, Controller $controller) {
-        Router::match(array('PATCH'),$matcher,$controller);
+        Route::match(array('PATCH'),$matcher,$controller);
     }
 
     public static function options(string $matcher, Controller $controller) {
-        Router::match(array('OPTIONS'),$matcher,$controller);
+        Route::match(array('OPTIONS'),$matcher,$controller);
     }
 
     public static function head(string $matcher, Controller $controller) {
-        Router::match(array('HEAD'),$matcher,$controller);
+        Route::match(array('HEAD'),$matcher,$controller);
     }
 
     public static function any(string $matcher, Controller $controller) {
-        Router::match(array('GET','POST','PUT','DELETE','PATCH','OPTIONS','HEAD'),$matcher,$controller);
+        Route::match(array('GET','POST','PUT','DELETE','PATCH','OPTIONS','HEAD'),$matcher,$controller);
     }
 
     public static function match(array $verbs, string $matcher, Controller $controller) {

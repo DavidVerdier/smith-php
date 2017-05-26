@@ -6,7 +6,7 @@ abstract class Component {
 
     protected $styles = '';
 
-    abstract public function run(App $app);
+    abstract public function run();
 
     public function addComponent(Component $c, string $name = null) {
         if (!$name) {

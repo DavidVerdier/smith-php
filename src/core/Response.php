@@ -25,10 +25,14 @@ class Response
     }
 
     public function file(string $filename) {
-        $this->headers->set('Content-type', finfo_file(finfo_open(FILEINFO_MIME_TYPE), $filename));
-        //$this->headers->set('Content-Disposition','attachment; filename="'.$filename.'"');
-        $this->headers->set('Content-length', filesize($filename));
-        $this->body = file_get_contents($filename);
+        if (file_exists($filename) === true) {
+            $this->body = file_get_contents($filename);
+            $this->headers->set('Content-type', finfo_file(finfo_open(FILEINFO_MIME_TYPE), $filename));
+            //$this->headers->set('Content-Disposition','attachment; filename="'.$filename.'"');
+            $this->headers->set('Content-length', filesize($filename));
+        } else {
+            header('HTTP/1.1 404 Not Found');
+        }        
     }
 }
 ?>

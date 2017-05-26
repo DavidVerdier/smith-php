@@ -10,14 +10,14 @@ class Template extends Component {
     public function __construct(string $filename) {
         $this->raw = file_get_contents($filename);
 
-        preg_match_all('/{{(?<bindings>\w+)}}/', $this->raw, $scan);
+        preg_match_all('/{{(?<binding>\w+)}}/', $this->raw, $scan);
 
-        foreach ($scan['bindings'] as $binding_point) {
+        foreach ($scan['binding'] as $binding_point) {
             $this->bindings[$binding_point] = null;
         }
     }
 
-    public function run(App $app) {
+    public function run() {
         $out = $this->raw;
 
         foreach ($this->bindings as $key => $value) {
@@ -34,7 +34,7 @@ class Template extends Component {
         return $out;
     }
 
-    public function set(string $binding, string $value) {
+    public function set(string $binding, $value) {
         $this->bindings[$binding] = $value;
     }
 }

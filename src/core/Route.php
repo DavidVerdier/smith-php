@@ -50,6 +50,7 @@ class Route {
                 $matched = true;
             }
         }
+        return $matched;
     }
 
     public static function setDefaultController(Controller $controller) {
@@ -57,12 +58,12 @@ class Route {
     }
 
     public static function import(string $filename) {
-        if (self::$controller !== null & file_exists($filename)) {
+        if (self::$controller === null & file_exists($filename)) {
 
             $config = json_decode(file_get_contents($filename));
 
             foreach ($config->routes as $route) {
-                if (Route::match($route->method,$route->pattern,new $route->Controller)) {
+                if (Route::match($route->method,$route->pattern,new $route->controller)) {
                     return;
                 }
             }

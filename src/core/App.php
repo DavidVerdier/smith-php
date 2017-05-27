@@ -9,11 +9,14 @@ class App
 
     public function __construct() {
         $this->request = Request::fromHeaders();
-        $this->Response = new Response();
+        $this->response = new Response();
+        Route::setDefaultController(new HTTP404Controller());
     }
 
     public function run(App $app) {
         
+        Route::executeController($this);
+
     }
 
     public function getRequest() {

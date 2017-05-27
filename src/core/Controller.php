@@ -3,12 +3,21 @@ namespace Heptagon\Core;
 
 abstract class Controller {
 
-    public function execute() {
-        $this->init();
-        $this->run();
+    protected $app;
+
+    protected $request;
+
+    protected $response;
+
+    public function _init(App $app) {
+        $this->app = $app;
+        $this->request = $app->getRequest();
+        $this->response = $app->getResponse();
     }
 
-    public function init() {}
+    public function execute() {
+        $this->run();
+    }
 
     public abstract function run();
 }

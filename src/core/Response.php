@@ -7,6 +7,8 @@ class Response
 
     private $body = '';
 
+    private $sent = false;
+
     public function __construct() {
         $this->headers = new Headers();
     }
@@ -20,6 +22,7 @@ class Response
     }
 
     public function send() {
+        if ($this->sent) return;
         $this->sendHeaders();
         echo $this->body;
     }

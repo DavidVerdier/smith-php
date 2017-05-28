@@ -1,7 +1,9 @@
 <?php
-include_once('../lib/lessc.php');
-
 namespace Heptagon\Core;
+
+include_once(__DIR__.'/../lib/lessc.php');
+
+use lessc;
 
 class Preprocessor {
 

@@ -1,5 +1,4 @@
 <?php
-namespace Heptagon\Lib;
 /**
  * lessphp v0.4.0
  * http://leafo.net/lessphp

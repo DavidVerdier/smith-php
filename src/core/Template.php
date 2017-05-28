@@ -25,7 +25,7 @@ class Template extends Component {
                 $out = str_replace('{{'.$key.'}}', $value, $out);
             } else {
                 if (isset($this->children[$key])) {
-                    $out = str_replace('{{'.$key.'}}', $this->children[$key]->run($app), $out);
+                    $out = str_replace('{{'.$key.'}}', $this->children[$key]->run(), $out);
                 } else {
                     $out = str_replace('{{'.$key.'}}', 'MISSING:{{'.$key.'}}', $out);
                 }

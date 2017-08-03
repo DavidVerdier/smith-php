@@ -1,5 +1,5 @@
 <?php
-namespace Heptagon\Core;
+namespace Smith\Core;
 
 include_once(__DIR__.'/../lib/lessc.php');
 

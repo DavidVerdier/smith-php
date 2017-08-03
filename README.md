@@ -1,5 +1,5 @@
-# Heptagon
-Heptagon is a extra small PHP7 framework. It aims at providing the most basic toolset for an application and orienting development towards good practice.
+# Smith
+Smith is an extra small PHP7 framework. It aims at providing the most basic toolset for an application and orienting development towards good practice.
 It is currently in very early development and should not be used in this state.
 
 ## Planned Features
@@ -29,7 +29,7 @@ Some uses of Components :
 - Abstraction of underlying hierarchy with prefabricated Component trees
 - ...
 
-Heptagon provides an abstract `Component` class that defines the behaviour for adding and accessing subcomponents, as well as an abstract `run()` method.
+Smith provides an abstract `Component` class that defines the behaviour for adding and accessing subcomponents, as well as an abstract `run()` method.
 To create a new type of component, one would extend the `Component` class and override the `run()` method to implement the actual behaviour. This method should return a `Node` object representing the content to be displayed. 
 Subclasses of `Node` implement functionality to generate an output string.
 

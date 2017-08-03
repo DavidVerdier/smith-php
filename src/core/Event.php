@@ -1,5 +1,5 @@
 <?php
-namespace Heptagon\Core;
+namespace Smith\Core;
 
 class Event {
     

@@ -1,5 +1,5 @@
 <?php
-namespace Heptagon\Core;
+namespace Smith\Core;
 
 abstract class Component {
     protected $children = array();

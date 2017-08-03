@@ -1,5 +1,5 @@
 {
-    "name": "heptagon/heptagon",
+    "name": "eethe/smith",
     "authors": [
         {
             "name": "Etienne Orlhac",
@@ -8,7 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Heptagon\\": "src/"
+            "Smith\\": "src/"
         }
     }
 }

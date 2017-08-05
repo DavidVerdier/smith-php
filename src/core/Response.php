@@ -31,11 +31,21 @@ class Response
         if (file_exists($filename) === true) {
             $this->body = file_get_contents($filename);
             $this->headers->set('Content-type', finfo_file(finfo_open(FILEINFO_MIME_TYPE), $filename));
-            //$this->headers->set('Content-Disposition','attachment; filename="'.$filename.'"');
             $this->headers->set('Content-length', filesize($filename));
         } else {
-            header('HTTP/1.1 404 Not Found');
-        }        
+            $this->headers->setStatus('404 Not Found','1.1');
+        }
+    }
+
+    public function fileDownload(string $filename) {
+        if (file_exists($filename) === true) {
+            $this->body = file_get_contents($filename);
+            $this->headers->set('Content-type', finfo_file(finfo_open(FILEINFO_MIME_TYPE), $filename));
+            $this->headers->set('Content-Disposition','attachment; filename="'.$filename.'"');
+            $this->headers->set('Content-length', filesize($filename));
+        } else {
+            $this->headers->setStatus('404 Not Found','1.1');
+        }
     }
 }
 ?>

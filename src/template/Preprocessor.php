@@ -1,5 +1,5 @@
 <?php
-namespace Smith\Core;
+namespace Smith\Core\Template;
 
 include_once(__DIR__.'/../lib/lessc.php');
 

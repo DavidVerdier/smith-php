@@ -1,9 +1,9 @@
 <?php
-namespace Smith\Core;
+namespace Smith\Http;
 
 class Response
 {
-    private $headers;
+    public $headers;
 
     private $body = '';
 
@@ -23,8 +23,10 @@ class Response
 
     public function send() {
         if ($this->sent) return;
+
         $this->sendHeaders();
         echo $this->body;
+        $this->sent = true;
     }
 
     public function file(string $filename) {

@@ -1,5 +1,5 @@
 <?php
-namespace Smith\Core;
+namespace Smith\Template;
 
 class Template extends Component {
 
@@ -17,7 +17,7 @@ class Template extends Component {
         }
     }
 
-    public function run() {
+    public function render() {
         $out = $this->raw;
 
         foreach ($this->bindings as $key => $value) {
@@ -34,7 +34,7 @@ class Template extends Component {
         return $out;
     }
 
-    public function set(string $binding, $value) {
+    public function setRaw(string $binding, $value) {
         $this->bindings[$binding] = $value;
     }
 }

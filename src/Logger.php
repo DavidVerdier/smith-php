@@ -1,5 +1,5 @@
 <?php
-namespace Smith\Core;
+namespace Smith;
 
 class Logger {
 

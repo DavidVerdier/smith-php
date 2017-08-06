@@ -1,5 +1,5 @@
 <?php
-namespace Smith\Core;
+namespace Smith\Http;
 
 class Headers {
     private $status = '200 OK';
@@ -8,10 +8,18 @@ class Headers {
 
     private $headers = array();
 
+    private $sent = false;
+
     public function send() {
+        if ($this->sent) return;
+
+        header('HTTP'.$this->httpVersion.' '.$this->status);
+
         foreach ($this->headers as $key => $value) {
             header($key . ': ' . $value);
         }
+
+        $this->sent = true;
     }
 
     public function set(string $key, string $value) {

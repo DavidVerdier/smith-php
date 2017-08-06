@@ -1,5 +1,5 @@
 <?php
-namespace Smith\Core;
+namespace Smith\Http;
 
 class Request {
 
@@ -14,7 +14,7 @@ class Request {
     public $address = '';
     public $scheme = '';
     public $port = '';
-    public $redirectUrl = '';
+    public $url = '';
     public $gatewayInterface = '';
     public $protocol = '';
     public $method = '';
@@ -39,7 +39,7 @@ class Request {
         $request->address = $_SERVER['REMOTE_ADDR'];
         $request->scheme = $_SERVER['REQUEST_SCHEME'];
         $request->port = $_SERVER['REMOTE_PORT'];
-        $request->redirectUrl = $_SERVER['REDIRECT_URL'];
+        $request->url = $_SERVER['REDIRECT_URL'];
         $request->gatewayInterface = $_SERVER['GATEWAY_INTERFACE'];
         $request->protocol = $_SERVER['SERVER_PROTOCOL'];
         $request->method = $_SERVER['REQUEST_METHOD'];
@@ -49,6 +49,10 @@ class Request {
         $request->time = $_SERVER['REQUEST_TIME'];
 
         $request->body = $_POST;
+
+
+        var_dump($request);
+        return $request;
     }
 
     public function getBody() {

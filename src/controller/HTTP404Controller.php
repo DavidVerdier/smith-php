@@ -1,5 +1,5 @@
 <?php
-namespace Smith\Controllers;
+namespace Smith\Controller;
 
 class HTTP404Controller extends Controller {
 

@@ -9,7 +9,7 @@ class Route {
 
     private static $handler;
 
-    private static $controller = 'Smith\Controllers\HTTP404Controller';
+    private static $controller = 'Smith\Controller\HTTP404Controller';
 
     private static $action = 'error';
 

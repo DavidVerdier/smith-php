@@ -50,8 +50,6 @@ class Request {
 
         $request->body = $_POST;
 
-
-        var_dump($request);
         return $request;
     }
 

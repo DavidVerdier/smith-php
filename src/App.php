@@ -20,7 +20,9 @@ class App {
 
         $controller = new $controllerName;
         $controller->_init($this->request);
+
         $controller->$action(...$params);
+        
         $controller->getResponse()->send();
     }
 }

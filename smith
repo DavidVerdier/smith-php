@@ -10,7 +10,7 @@ if (file_exists(__DIR__.'/../../autoload.php')) {
 $args = $_SERVER['argv'];
 
 if (count($args) > 1) {
-
+	
 } else {
     echo "Let me smith y' weapons.  I am a smith, such is my purpose.";
 }

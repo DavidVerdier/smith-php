@@ -11,7 +11,7 @@ class Preprocessor {
         $out = 
 "<?php
 namespace ".$namespace.";
-use Heptagon\Core\Template;
+use Smith\Template\Template;
 class ".$className." extends Template {
     public function __construct() {
         parent::__construct('".$filename."');
@@ -31,15 +31,6 @@ class ".$className." extends Template {
                 }
             }
         }
-    }
-
-    public static function buildTheme(string $filename, string $dest) {
-        $lessc = new lessc();
-        $lessc->compileFile($filename,$dest);
-    }
-
-    public static function buildFromConfig(string $filename) {
-
     }
 }
 ?>

@@ -19,6 +19,7 @@ class TwigLoaderAdapter implements TemplateLoader {
 	/**
 	 * @param string $templatesPath		Path to template files storage
 	 * @param string $cachePath			Path to store template cache
+     * @throws NoTwigException
 	 */
 	public function __construct(string $templatesPath, string $cachePath = null) {
 	    if (!class_exists("\Twig_Environment")) {

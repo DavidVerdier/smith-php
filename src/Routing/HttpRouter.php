@@ -25,7 +25,7 @@ class HttpRouter implements Router {
     /**
      * HttpRouter constructor.
      * @param Request $request
-     * @param Response $response
+     * @param array $services
      */
     public function __construct(Request $request, array $services) {
         $this->routes = array();

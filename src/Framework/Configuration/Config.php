@@ -25,6 +25,7 @@ class Config extends \stdClass {
 
     /**
      * @param string $file
+     * @throws InvalidJsonException
      * @return mixed
      */
     private function getJson(string $file) {
@@ -37,6 +38,7 @@ class Config extends \stdClass {
 
     /**
      * @param $json
+     * @throws CircularImportException
      * @return array
      */
     private function resolveImports($json) {

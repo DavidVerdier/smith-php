@@ -9,7 +9,7 @@
 namespace Smith\Http;
 
 
-class Response implements AbstractResponse {
+class Response implements ResponseInterface {
 
     private $status = 200;
 

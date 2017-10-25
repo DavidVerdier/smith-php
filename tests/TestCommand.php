@@ -9,11 +9,11 @@
 namespace Test;
 
 
-use Smith\Console\Command;
+use Smith\Console\CommandInterface;
 use Smith\DependencyInjection\AutoWirer;
 use Smith\Http\Response;
 
-class TestCommand implements Command {
+class TestCommand implements CommandInterface {
     public function getDoc() {
         // TODO: Implement getDoc() method.
     }

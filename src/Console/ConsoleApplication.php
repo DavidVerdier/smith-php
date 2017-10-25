@@ -8,9 +8,9 @@
 
 namespace Smith\Console;
 
-use Smith\Application\Application;
+use Smith\Application\ApplicationInterface;
 
-class ConsoleApplication implements Application {
+class ConsoleApplication implements ApplicationInterface {
 
     private $argc;
 
@@ -39,14 +39,14 @@ class ConsoleApplication implements Application {
     }
 
     /**
-     * @param Command $command The command to register
+     * @param CommandInterface $command The command to register
      */
-    public function register(Command $command) {
+    public function register(CommandInterface $command) {
         $this->commands[$command->getName()] = $command;
     }
 
     /**
-     * @return Command
+     * @return CommandInterface
      */
     private function route() {
         $target = null;

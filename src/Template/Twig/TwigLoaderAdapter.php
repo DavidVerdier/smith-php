@@ -1,10 +1,10 @@
 <?php
 namespace Smith\Template\Twig;
 
-use Smith\Template\TemplateLoader;
+use Smith\Template\TemplateLoaderInterface;
 use Smith\Template\Renderable;
 
-class TwigLoaderAdapter implements TemplateLoader {
+class TwigLoaderAdapter implements TemplateLoaderInterface {
 	
 	private $loader;
 	
@@ -32,7 +32,7 @@ class TwigLoaderAdapter implements TemplateLoader {
 	/**
 	 * Returns a \Twig_TemplateWrapper wrapped as a Renderable
 	 * {@inheritDoc}
-	 * @see \Smith\Template\TemplateLoader::load()
+	 * @see \Smith\Template\TemplateLoaderInterface::load()
 	 */
 	public function load(string $path) : Renderable {
 		if (!$this->ready) {

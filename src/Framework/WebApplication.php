@@ -7,15 +7,13 @@
 namespace Smith\Framework;
 
 
-use Smith\Application\Application;
+use Smith\Application\ApplicationInterface;
 use Smith\Framework\Configuration\Config;
 use Smith\Http\Request;
 use Smith\Http\Response;
 use Smith\Routing\HttpRouter;
-use Smith\Template\TemplateLoader;
-use Smith\Template\Twig\TwigLoaderAdapter;
 
-class WebApplication implements Application {
+class WebApplication implements ApplicationInterface {
 
     const DEFAULT_CONFIG_FILE = "../config/config.json";
 

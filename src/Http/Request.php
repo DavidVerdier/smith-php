@@ -9,7 +9,7 @@
 namespace Smith\Http;
 
 
-class Request implements AbstractRequest {
+class Request implements RequestInterface {
 
     private $method;
 

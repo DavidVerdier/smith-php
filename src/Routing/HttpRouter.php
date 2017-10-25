@@ -12,7 +12,7 @@ use Smith\DependencyInjection\AutoWirer;
 use Smith\Http\Request;
 use Smith\Http\Response;
 
-class HttpRouter implements Router {
+class HttpRouter implements RouterInterface {
 
     private $routes;
 

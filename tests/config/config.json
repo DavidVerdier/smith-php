@@ -1,0 +1,7 @@
+{
+  "routes": "@import:routes.json",
+  "template": {
+    "loader": "\\Smith\\Template\\Twig\\TwigLoaderAdapter",
+    "path": "assets/templates"
+  }
+}

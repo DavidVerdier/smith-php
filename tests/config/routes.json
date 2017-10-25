@@ -1,0 +1,12 @@
+[
+  {
+    "pattern":"/test/(\\d+)",
+    "controller":"\\Test\\TestController",
+    "action":"test"
+  },
+  {
+    "pattern":"/a",
+    "controller":"\\Test\\TestController",
+    "action":"a"
+  }
+]

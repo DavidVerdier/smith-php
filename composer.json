@@ -1,13 +1,14 @@
 {
     "name": "eethe/smith",
-    "version": "0.1.0",
-    "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Etienne Orlhac",
             "email": "etienneorlhac@gmail.com"
         }
     ],
+    "license": "MIT",
+    "require": {},
     "autoload": {
         "psr-4": {
             "Smith\\": "src/"
@@ -15,13 +16,11 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Test\\": "test/"
+            "Test\\": "tests/"
         }
     },
-    "bin":[
-        "smith"
-    ],
-    "config": {
-        "bin-dir": "./"
+    "require-dev": {
+        "kint-php/kint": "^2.2",
+        "twig/twig": "^2.4"
     }
 }

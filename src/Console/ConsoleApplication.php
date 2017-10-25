@@ -19,14 +19,12 @@ class ConsoleApplication implements Application {
     private $commands;
 
     public function __construct() {
-        global $argc;
-        global $argv;
         if (!empty($argv)) {
-            $this->argc = $argc;
-            $this->args = $argv;
+            $this->argc = $_SERVER['argc'];
+            $this->args = $_SERVER['argv'];
             $this->commands = array();
         } else {
-            die('Not started from command line.');
+            echo 'Not started from command line.';
         }
     }
 

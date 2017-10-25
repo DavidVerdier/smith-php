@@ -1,6 +1,7 @@
 {
     "name": "smith/smith",
     "type": "library",
+    "description": "Smith is an extra small PHP7 library and framework, that aims at providing basic tools to quickly build applications, while using as few dependencies as possible.",
     "authors": [
         {
             "name": "Etienne Orlhac",

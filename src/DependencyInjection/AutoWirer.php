@@ -40,7 +40,7 @@ class AutoWirer {
      * @return mixed[]
      * @throws MissingDependencyException
      */
-    private function wire($reflectedCallable, array $params) {
+    private function wire(\Reflector $reflectedCallable, array $params) {
         $newParams = array();
 
         $paramDistributor = new Distributor();

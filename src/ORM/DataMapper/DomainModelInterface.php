@@ -4,9 +4,10 @@
  * Date: 25-Oct-17
  */
 
-namespace Smith\ORM;
+namespace Smith\ORM\DataMapper;
 
 
-class Filter {
+interface DomainModelInterface {
+
 
 }

@@ -14,9 +14,7 @@ use Smith\Serialization\Hashable;
 interface Cacheable extends Hashable {
 
     /**
-     * @return CacheManager
+     * @return CacheManagerInterface
      */
     public static function getCacheManager();
-
-
 }

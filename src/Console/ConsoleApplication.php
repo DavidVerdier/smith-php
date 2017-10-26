@@ -19,7 +19,7 @@ class ConsoleApplication implements ApplicationInterface {
     private $commands;
 
     public function __construct() {
-        if (!empty($argv)) {
+        if (isset($_SERVER['argv'])) {
             $this->argc = $_SERVER['argc'];
             $this->args = $_SERVER['argv'];
             $this->commands = array();

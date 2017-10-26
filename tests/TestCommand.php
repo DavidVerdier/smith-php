@@ -10,8 +10,6 @@ namespace Test;
 
 
 use Smith\Console\CommandInterface;
-use Smith\DependencyInjection\AutoWirer;
-use Smith\Http\Response;
 
 class TestCommand implements CommandInterface {
     public function getDoc() {
@@ -28,18 +26,6 @@ class TestCommand implements CommandInterface {
 
     public function run(array $args) {
 
-        $closure = function (Response $rq, string $c, \integer $b) {
-
-        };
-
-        $aw = new AutoWirer();
-        var_dump($aw->wireClosure($closure,array(new Response(), 6, "hello")));
-        var_dump($aw->wireMethod($this,"test",array(new Response(), 6, "hello", "bye", 1)));
-
-    }
-
-
-    public function test(string $a, Response $rq, string $c, \integer $b) {
-
+        var_dump(self::class);
     }
 }

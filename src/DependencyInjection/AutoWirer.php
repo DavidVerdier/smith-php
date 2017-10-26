@@ -43,10 +43,7 @@ class AutoWirer {
     private function wire(\Reflector $reflectedCallable, array $params) {
         $newParams = array();
 
-        $paramDistributor = new Distributor();
-        foreach ($params as $param) {
-            $paramDistributor->add($param,$this->getType($param));
-        }
+        $paramDistributor = new ParamDistributor($params);
 
         $reflectParams = $reflectedCallable->getParameters();
 
@@ -64,17 +61,5 @@ class AutoWirer {
         }
 
         return $newParams;
-    }
-
-    /**
-     * @param $var
-     * @return string
-     */
-    private function getType($var) {
-        $type = gettype($var);
-        if ($type === "object") {
-            $type = get_class($var);
-        }
-        return $type;
     }
 }

@@ -33,7 +33,8 @@ class __TwigTemplate_699de651fea78566d4f72e36403cc71195cdcf7bad00397f1d8131e8b58
         echo "
     </p>
 </body>
-</html>";
+</html>
+";
     }
 
     public function getTemplateName()
@@ -53,6 +54,6 @@ class __TwigTemplate_699de651fea78566d4f72e36403cc71195cdcf7bad00397f1d8131e8b58
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "base.html", "C:\\smith\\smith\\tests\\public\\assets\\templates\\base.html");
+        return new Twig_Source("", "base.html", "C:\\Users\\anthony\\PhpstormProjects\\smith-php\\tests\\public\\assets\\templates\\base.html");
     }
 }

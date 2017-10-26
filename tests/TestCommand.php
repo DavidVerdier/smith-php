@@ -10,6 +10,8 @@ namespace Test;
 
 
 use Smith\Console\CommandInterface;
+use Smith\Controller\Controller;
+use Smith\DependencyInjection\AutoWirer;
 
 class TestCommand implements CommandInterface {
     public function getDoc() {
@@ -26,6 +28,14 @@ class TestCommand implements CommandInterface {
 
     public function run(array $args) {
 
-        var_dump(self::class);
+        $aw = new AutoWirer();
+
+        $c = function (int $a, \integer $i, string $b, Controller $o, \Closure $c) {};
+
+        $a = 1;
+
+        var_dump(gettype($a));
+
+        var_dump($aw->wireClosure($c,array(12,2,3,"a","b","c",function(){}, new TestController())));
     }
 }

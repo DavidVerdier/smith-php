@@ -8,7 +8,7 @@ namespace Test;
 
 use Smith\Framework\WebController;
 use Smith\Http\Request;
-use Smith\Template\Twig\TwigLoaderAdapter;
+use Smith\Template\TemplateLoaderInterface;
 
 class TestController extends WebController {
 
@@ -16,7 +16,7 @@ class TestController extends WebController {
         echo $id;
     }
 
-    public function a(Request $rq, TwigLoaderAdapter $loader) {
+    public function a(Request $rq, TemplateLoaderInterface $loader) {
 
         $this->view($loader->load("base.html"), array("title" => "Hello"));
     }
